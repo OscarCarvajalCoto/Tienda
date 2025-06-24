@@ -1,7 +1,8 @@
 // Inicialización de Supabase
+const { createClient } = supabase; // Aseguramos que se use el objeto supabase
 const supabaseUrl = 'https://vicvgsjoivzlqbzxuoop.supabase.co';
 const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZpY3Znc2pvaXZ6bHFienh1b29wIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA3MjM4MjAsImV4cCI6MjA2NjI5OTgyMH0.69f3qDkUqJwBYJQgc7brBVU9k_eCXQ43qa66FnGyG-0';
-const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 let medidasTemporales = [];
 

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Clientes</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto p-6 max-w-2xl bg-white rounded-lg shadow-md mt-5">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Gestión de Clientes</h1>
+
+        <!-- Sección para agregar temporada -->
+        <section class="mb-6">
+            <h2 class="text-xl font-semibold text-gray-700 mb-2">Agregar Temporada</h2>
+            <div class="flex space-x-2">
+                <input type="text" id="nuevaTemporada" placeholder="Nombre de la temporada" class="flex-1 p-2 border rounded">
+                <button onclick="agregarTemporada()" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Agregar</button>
+            </div>
+        </section>
+
+        <!-- Sección para agregar tipo de prenda -->
+        <section class="mb-6">
+            <h2 class="text-xl font-semibold text-gray-700 mb-2">Agregar Tipo de Prenda</h2>
+            <div class="flex space-x-2 mb-2">
+                <input type="text" id="nuevoTipoPrenda" placeholder="Nombre de la prenda" class="flex-1 p-2 border rounded">
+                <input type="text" id="nuevaMedida" placeholder="Medida (ej. Largo)" class="flex-1 p-2 border rounded">
+                <button onclick="agregarMedida()" class="bg-green-500 text-white p-2 rounded hover:bg-green-600">Agregar Medida</button>
+            </div>
+            <ul id="medidasList" class="list-disc pl-5 mb-2"></ul>
+            <button onclick="guardarTipoPrenda()" class="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Guardar Tipo de Prenda</button>
+        </section>
+
+        <!-- Sección para registrar cliente -->
+        <section class="mb-6">
+            <h2 class="text-xl font-semibold text-gray-700 mb-2">Registrar Cliente</h2>
+            <form id="clientForm" class="space-y-4">
+                <div>
+                    <label class="block text-gray-700">Nombre:</label>
+                    <input type="text" id="nombre" required class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label class="block text-gray-700">Celular:</label>
+                    <input type="text" id="celular" placeholder="8 dígitos" required class="w-full p-2 border rounded">
+                </div>
+                <div>
+                    <label class="block text-gray-700">Sexo:</label>
+                    <select id="sexo" required class="w-full p-2 border rounded">
+                        <option value="Hombre">Hombre</option>
+                        <option value="Mujer">Mujer</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Tipo Prenda:</label>
+                    <select id="tipoPrenda" required class="w-full p-2 border rounded"></select>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Temporada:</label>
+                    <select id="temporada" required class="w-full p-2 border rounded"></select>
+                </div>
+                <div>
+                    <label class="block text-gray-700">Estado:</label>
+                    <select id="estado" required class="w-full p-2 border rounded">
+                        <option value="Pendiente">Pendiente</option>
+                        <option value="Cortado">Cortado</option>
+                        <option value="Listo">Listo</option>
+                        <option value="Retirado">Retirado</option>
+                    </select>
+                </div>
+                <div id="medidasContainer" class="space-y-2"></div>
+                <div>
+                    <label class="block text-gray-700">Observaciones:</label>
+                    <textarea id="observaciones" class="w-full p-2 border rounded"></textarea>
+                </div>
+                <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Guardar</button>
+            </form>
+        </section>
+
+        <div id="mensaje" class="mensaje"></div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="service-worker.js"></script>
+</body>
+</html>

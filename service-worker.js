@@ -5,9 +5,8 @@ const urlsToCache = [
     '/index.html',
     '/styles.css',
     '/app.js',
-    'https://cdn.jsdelivr.net/npm/@supabase/supabase-js',
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css',
-    'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css'
+    'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2',
+    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css'
 ];
 
 self.addEventListener('install', (event) => {

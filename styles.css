@@ -1,6 +1,9 @@
-/* Estilos personalizados para complementar Tailwind */
+/* Estilos personalizados */
 body {
     font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -12,13 +15,14 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.section {
-    margin-bottom: 20px;
-}
-
 h1 {
     text-align: center;
     color: #333;
+    margin-bottom: 20px;
+}
+
+.section {
+    margin-bottom: 20px;
 }
 
 h2 {
@@ -40,6 +44,8 @@ input, select, textarea {
 }
 
 button {
+    background-color: #007bff;
+    color: #fff;
     padding: 10px;
     border: none;
     border-radius: 4px;
@@ -47,12 +53,13 @@ button {
 }
 
 button:hover {
-    opacity: 0.9;
+    background-color: #0056b3;
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 10px;
 }
 
 li {
